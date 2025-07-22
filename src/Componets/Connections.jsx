@@ -37,11 +37,11 @@ const Connections = () => {
     <div className='flex flex-col items-center text-xl my-4 gap-4'>
       <h1>Connections</h1>
       {connections.map((connection) => {
-        const {firstName,lastName,photoUrl,age,gender,about} = connection;
+        const {_id,firstName,lastName,photoUrl,age,gender,about} = connection;
         return( 
-            <div className="card card-side bg-base-300 shadow-sm">
+            <div key={_id}className="card card-side bg-base-300 shadow-sm">
   <figure>
-    <img className=' h-44 w-45 rounded-full object-cover'
+    <img className=' h-25 w-25 rounded-full mx-3'
       src={photoUrl}
       alt="photo" />
   </figure>
