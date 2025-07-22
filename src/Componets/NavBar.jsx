@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utills/constants';
 import { removeUser } from '../utills/userSlice';
+import Connections from './Connections';
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -51,9 +52,10 @@ const NavBar = () => {
                 <Link to ="/Profile" className="justify-between">
                   Profile</Link>
                
-               
               </li>
-              <li><a>Settings</a></li>
+              <li>
+              <Link to="/Connections">Connections</Link>
+              </li>
               <li><a onClick={handleLogout}>Logout</a></li>
             </ul>
           </div>

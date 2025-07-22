@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 
 
 const EditProfile = ({user}) => {
+  
     
   const [firstName, setFirstName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
