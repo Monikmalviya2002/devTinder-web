@@ -34,7 +34,7 @@ const NavBar = () => {
 
       {user && (
         <div className="flex items-center gap-4 mx-4">
-          <div className="form-control">Welcome {user.firstName}</div>
+          <div className="form-control">Welcome , {user.firstName}</div>
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -57,7 +57,7 @@ const NavBar = () => {
               <Link to="/Connections">Connections</Link>
               </li>
                <li>
-              <Link to="/request">Request</Link>
+              <Link to="/Request">Request</Link>
               </li>
               <li><a onClick={handleLogout}>Logout</a></li>
             </ul>

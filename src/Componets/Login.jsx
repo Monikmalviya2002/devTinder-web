@@ -5,12 +5,13 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utills/userSlice";
 import { useNavigate } from "react-router-dom";
 import {BASE_URL} from "../utills/constants"
+import { Link } from "react-router-dom";
 
 
 
 const Login = () => {
-        const [emailId, setEmailId] = useState("heenalohar2128@gmail.com");
-       const [password, setPassword] = useState("Heena@123");
+        const [emailId, setEmailId] = useState("");
+       const [password, setPassword] = useState("");
        const[error ,setError] = useState("");
        const dispatch = useDispatch();
        const navigate = useNavigate();
@@ -90,15 +91,19 @@ const Login = () => {
       <button className="btn btn-primary " onClick={handleLogin}>Login</button>
     </div>
   </div>
+<div className="card card-bordered bg-base-300 w-96 shadow-md">
+  <div className="card-body text-center">
+    <p>
+      Don’t have an account?
+      <Link to="/Signup" className="link link-primary ml-1">
+        Sign up
+      </Link>
+    </p>
+  </div>
+</div>
 
-   <div className="card card-bordered bg-base-300 w-96 shadow-md">
-        <div className="card-body text-center">
-          <p>
-            Don’t have an account? <a className="link link-primary cursor-pointer" onClick={<Signup/>}>Sign up</a>
-          </p>
         </div>
-      </div>
-    </div>
+ 
 
    
   );

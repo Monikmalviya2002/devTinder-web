@@ -20,7 +20,7 @@ function Request() {
     );
      dispatch(removeRequest(_id)) 
   } catch (err) {
-    console.error("Review error:", err.message);
+   console.log(err.message)
   }
 };
 
@@ -31,14 +31,14 @@ function Request() {
           });
           
        dispatch(addRequest(res.data.data));
-  console.log("Fetched requests:", res.data);
+  
 
       }
       catch(err){
         console.log(err.message)
       }
     }
-  console.log(fetchRequests)
+
     useEffect(()=>{
     fetchRequests()
     },[])
@@ -53,6 +53,7 @@ function Request() {
     <div className='flex flex-col items-center text-xl my-4 gap-4'>
       <h1>Connections Request</h1>
       {requests.map((request) => {
+         if (!request.fromUserId) return null;
         const {_id,firstName,lastName,photoUrl,age,gender,about} = request.fromUserId
         
         return( 

@@ -11,17 +11,18 @@ const EditProfile = ({user}) => {
     
   const [firstName, setFirstName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
-  const [age, setAge] = useState(user.age);
-  const [gender, setGender] = useState(user.gender);
+  const [age, setAge] = useState(user.age||"");
+  const [gender, setGender] = useState(user.gender ||"");
   const [error, setError] = useState("");
-  const [about, setAbout] = useState(user.about);
-const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
+  const [about, setAbout] = useState(user.about|| "");
+const [photoUrl, setPhotoUrl] = useState(user.photoUrl ||"");
  const dispatch = useDispatch();
 
 
   const handleSave = async () => {
   try {
-    const res = await axios.patch(
+    
+    const res = await axios.post(
       BASE_URL + "/profile/edit",
       {
         firstName,
@@ -35,6 +36,7 @@ const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
         withCredentials: true,
       }
     );
+    console.log(res);
      dispatch(addUser(res?.data?.data));
          }catch(err){
             setError(err.message)
