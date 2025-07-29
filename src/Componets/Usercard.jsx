@@ -32,7 +32,8 @@ if (!user) return null;
   return (
     <div className="card bg-base-300 w-70 shadow-sm">
       <figure>
-        <img src={photoUrl} alt="photo" className="w-full h-64 object-cover" />
+        <img src={photoUrl || "/default-user.jpg"}
+      alt="photo" className="w-full h-64 object-cover" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{firstName + " " + lastName}</h2>
