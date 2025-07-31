@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { BASE_URL } from '../utills/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { addConnections } from '../utills/connectionSlice';
+import { Link } from 'react-router-dom';
 
 const Connections = () => {
   
@@ -34,7 +35,7 @@ const Connections = () => {
   }
 
   return (
-    <div className='flex flex-col items-center text-xl my-4 gap-4 w-full'>
+    <div className='flex flex-col  items-center text-xl my-4 gap-4 w-full'>
       <h1>Connections</h1>
       {connections.map((connection) => {
         const {_id,firstName,lastName,photoUrl,age,gender,about} = connection;
@@ -50,9 +51,11 @@ const Connections = () => {
    {age&& gender&& <p>{age + " ," + gender}</p>}
     <p>{about }</p>
 
-      
-   
+      <Link to ={"/Chat/" +_id}><button className='btn btn-primary '>chat</button></Link>
+  
+ 
   </div>
+  
 </div>
 
        

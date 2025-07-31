@@ -8,6 +8,7 @@ import appStore from "./utills/appStore";
 import Feed from "./Componets/Feed";
 import Connections from "./Componets/Connections";
 import Request from "./Componets/Request";
+import Chat from "./Componets/Chat";
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
          <Route path="/connections" element ={<Connections/>}/>
         <Route path="/request" element={<Request />} />
          <Route path="/signup" element={<Signup />} />
+         <Route path ="/chat/:targetId"  element={<Chat/>}/>
 
-
-        
+    
       </Route>
       </Routes>
      </BrowserRouter>
